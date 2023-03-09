@@ -76,3 +76,29 @@
   -webkit-border-radius: 50%;
   border-radius: 50%;
 }
+
+.cursor-pointer{
+  cursor: pointer;
+}
+
+.bg-layanan:hover{
+  background: var(--color-ssc);
+  color: #fff;
+}
+
+.badge-ssc-layanan{
+  background-color: var(--color-ssc);
+  height: .5rem;
+  width: 7%;
+  border-radius: .3rem;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
