@@ -31,7 +31,8 @@
 </template>
 
 <script>
-import { SET_AUTHENTICATION, SET_USERNAME } from "../stores/storeconstants";
+import { SET_AUTHENTICATION, SET_USERNAME, GET_USERNAME } from "../stores/storeconstants";
+import { useStore } from 'vuex'
   export default {
     data(){
       return{
@@ -39,6 +40,13 @@ import { SET_AUTHENTICATION, SET_USERNAME } from "../stores/storeconstants";
           username: "",
           password: ""
         },
+      }
+    },
+    setup(){
+      const store = useStore()
+      const coba = store.getters[`auth/${GET_USERNAME}`]
+      return{
+        coba
       }
     },
     methods:{

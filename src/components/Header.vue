@@ -5,7 +5,8 @@
         <img src="@/assets/logo-basic-ssc.png" alt="SSC IMG" class="logo-header img-fluid">
       </a>
       <div class="d-flex my-3 my-lg-0 d-lg-block d-none">
-        <router-link class="btn btn-ssc px-4 py-2" to="/login">Login</router-link>
+        <router-link v-if="!getUsername().length" class="btn btn-ssc px-4 py-2" to="/login">Login</router-link>
+        <router-link v-else class="btn btn-ssc px-4 py-2" to="/" @click="resetState()">Logout</router-link>
       </div>
       <button
         class="navbar-toggler"
@@ -45,7 +46,8 @@
             </li> -->
           </ul>
           <div class="d-flex my-3 my-lg-0">
-            <router-link class="btn btn-ssc px-4 py-2" to="/login">Login</router-link>
+            <router-link v-if="!getUsername().length" class="btn btn-ssc px-4 py-2" to="/login">Login</router-link>
+            <router-link v-else class="btn btn-ssc px-4 py-2" to="/" @click="resetState()">Logout</router-link>
           </div>
         </div>
       </div>
@@ -53,3 +55,20 @@
   </nav>
   
 </template>
+
+<script>
+
+  import {  GET_USERNAME, SET_AUTHENTICATION, SET_USERNAME } from "../stores/storeconstants";
+   export default {
+    methods: {
+      getUsername() {
+        return this.$store.getters[`auth/${GET_USERNAME}`]
+      },
+      resetState() {
+        this.$store.commit(`auth/${SET_AUTHENTICATION}`, false);
+        this.$store.commit(`auth/${SET_USERNAME}`, "");
+        window.location.reload();
+      } 
+    },
+   }
+</script>
