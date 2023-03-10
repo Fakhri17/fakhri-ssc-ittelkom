@@ -1,34 +1,55 @@
 <template>
-  <nav class="navbar navbar-expand-lg py-3">
+  <nav class="navbar navbar-expand-lg shadow">
     <div class="container">
+      <a class="navbar-brand me-auto" href="#">
+        <img src="@/assets/logo-basic-ssc.png" alt="SSC IMG" class="logo-header img-fluid">
+      </a>
+      <div class="d-flex my-3 my-lg-0 d-lg-block d-none">
+        <a href="" class="btn btn-ssc px-4 py-2">Login</a>
+      </div>
       <button
         class="navbar-toggler"
         type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarTogglerDemo01"
-        aria-controls="navbarTogglerDemo01"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
+        data-bs-toggle="offcanvas"
+        data-bs-target="#offcanvasNavbar"
+        aria-controls="offcanvasNavbar"
+        
       >
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse border-bottom" id="navbarTogglerDemo01">
-        <a class="navbar-brand" href="#">
-          <img src="@/assets/logo-basic-ssc.png" alt="SSC IMG" class="logo-header img-fluid">
-        </a>
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item d-lg-none d-block">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
-          </li>
-          <li class="nav-item d-lg-none d-block">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item d-lg-none d-block">
-            <a class="nav-link disabled">Disabled</a>
-          </li>
-        </ul>
-       
+      <div class="offcanvas offcanvas-end d-block d-lg-none" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+            <!-- <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Dropdown
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+              </ul>
+            </li> -->
+          </ul>
+          <div class="d-flex my-3 my-lg-0">
+            <a href="" class="btn btn-ssc px-4 py-2">Login</a>
+          </div>
+        </div>
       </div>
     </div>
   </nav>
+  
 </template>
