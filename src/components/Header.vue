@@ -5,7 +5,7 @@
         <img src="@/assets/logo-basic-ssc.png" alt="SSC IMG" class="logo-header img-fluid">
       </a>
       <div class="d-flex my-3 my-lg-0 d-lg-block d-none">
-        <a href="" class="btn btn-ssc px-4 py-2">Login</a>
+        <router-link class="btn btn-ssc px-4 py-2" to="/login">Login</router-link>
       </div>
       <button
         class="navbar-toggler"
@@ -45,7 +45,7 @@
             </li> -->
           </ul>
           <div class="d-flex my-3 my-lg-0">
-            <a href="" class="btn btn-ssc px-4 py-2">Login</a>
+            <router-link class="btn btn-ssc px-4 py-2" to="/login">Login</router-link>
           </div>
         </div>
       </div>

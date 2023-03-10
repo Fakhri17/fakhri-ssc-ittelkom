@@ -1,8 +1,6 @@
-
-
-
 <template>
-  <Header />
+  
+  <Header v-show="$route.path != '/login' "/>
   <RouterView />
   <BackToTop />
 </template>
