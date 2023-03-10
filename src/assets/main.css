@@ -88,8 +88,8 @@
 
 .badge-ssc-layanan{
   background-color: var(--color-ssc);
-  height: .5rem;
-  width: 7%;
+  height: .7rem;
+  width: 10%;
   border-radius: .3rem;
 }
 
@@ -129,7 +129,12 @@
   color: var(--color-ssc);
 }
 
-.text-ssc:hover{
+.text-ssc-hover{
+  color: var(--color-ssc);
+}
+
+
+.text-ssc-hover:hover{
   color: #eb4545;
 }
 
@@ -139,4 +144,14 @@
 
 .bg-ssc{
   background: var(--color-ssc);
+}
+
+.btn-ssc{
+  background: var(--color-ssc);
+  color: #fff;
+}
+
+.btn-ssc:hover{
+  background: #eb4545;
+  color: #fff;
 }

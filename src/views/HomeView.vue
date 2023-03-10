@@ -11,7 +11,7 @@
               <h2 class="fw-ssc mb-0"><strong class="text-ssc">S</strong>ervice</h2>
               <h2 class="fw-ssc mb-0"><strong class="text-ssc">C</strong>enter</h2>
               <p class="text-muted fs-5 mb-4">Datang, Buat Tiket, Proses</p>
-              <a href="#layanan" class="btn btn-danger px-4 py-2">Lihat Layanan</a>
+              <a href="#layanan" class="btn btn-ssc px-4 py-2">Lihat Layanan</a>
             </div>
           </div>
           <div class="col-md-7 col-12">
@@ -70,7 +70,7 @@
                     :src="`https://cdn.lordicon.com/${item.icon}.json`"
                     trigger="morph"
                     :colors="`primary:${item.colorPrimary},secondary:${item.colorSecondary}`"
-                    style="width: 120px; height: 120px"
+                    style="width: 100px; height: 100px"
                   >
                   </lord-icon>
                 </div>
@@ -138,10 +138,10 @@
                       </div>
                       <p class="mb-4">{{  item.informationDescription }}</p>
                       <div>
-                        <a :href="item.igUrl" target="_blank" class="text-ssc mb-3 d-block h5 accordion text-decoration-none"> 
+                        <a :href="item.igUrl" target="_blank" class="text-ssc-hover mb-3 d-block h5 accordion text-decoration-none"> 
                           <i class="bi bi-instagram me-3"></i> {{ item.igUsername }} 
                         </a>
-                        <a :href="item.webUrl" target="_blank" class="text-ssc d-block h5 accordion text-decoration-none"> 
+                        <a :href="item.webUrl" target="_blank" class="text-ssc-hover d-block h5 accordion text-decoration-none"> 
                           <i class="bi bi-globe me-3"></i> {{ item.webUrl }} 
                         </a>
                       </div>
@@ -160,6 +160,44 @@
           </div>
         
         
+      </div>
+    </section>
+    <section class="bg-dark py-5 text-white">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-12 mb-4 mb-lg-0">
+            <h2 class="fw-bold">Student Service Center</h2>
+            <div class="mt-3">
+              <div class="h5 mb-3">Contact: </div>
+              <p><strong>Address:</strong>  Jl. Ketintang No.156, Gayungan, Surabaya, Jawa Timur 60231</p>
+              <p><strong>Phone:</strong> (+6231) 8280800</p>
+              <p><strong>Email:</strong> humas@ittelkom-sby.ac.id</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-12 mb-4 mb-lg-0">
+            <h4 class="fw-bold">Aplikasi Student Service Center</h4>
+            <div class="mt-3">
+              <p>Ditunjukkan untuk mempermudah perangkat kerja serta mahasiswa Institut Teknologi Telkom Surabaya untuk melakukan pelaporan pemintaan bantuan, demi terciptanya lingkungan kerja serta perkuliahan yang lebih baik dan efisien.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="py-3">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 col-12">
+            <p class="float-md-start font-sm text-muted mb-0">
+              &copy; 2023, <strong class="text-ssc">IT Telkom Surabaya</strong> Studen Service Center
+            </p>
+          </div>
+          <div class="col-lg-6 col-12">
+            <p class="float-md-end font-sm text-muted mb-0">
+              <a href="https://ittelkom-sby.ac.id/" target="_blank" class="text-ssc-hover text-decoration-none fw-semibold">IT Telkom Surabaya.</a>
+              All rights reserved
+            </p>
+          </div>
+        </div>
       </div>
     </section>
   </main>
