@@ -39,7 +39,7 @@
                       :key="item"
                       class="list-inline-item items-list mx-1"
                     >
-                      <div class="px-2">
+                      <div class="d-flex d-md-block px-2">
                         <span class="bg-ssc badge-timeline py-1 text-white fw-semibold mb-2">{{
                           item.number
                         }}</span>
@@ -81,11 +81,59 @@
             <div class="d-lg-none d-block">
               <Transition name="fade">
                 <div v-show="displayLayanan == item.id" class="my-5">
-                  <div class="mb-4">
+                  <div v-if="item.service.length" class="mb-4">
                     <h2 class="text-ssc">Layanan {{ item.title }}</h2>
                     <div class="badge-ssc-layanan"></div>
                   </div>
-                
+                  <div v-if="item.service.length" class="row mb-5">
+                    <div class="col-12 mb-4">
+                      <ul class="list-group">
+                        <li v-for="itemChild in item.service" :key="item" @click="displayDetailLayanan(itemChild.id)"  
+                          :class="serviceId == itemChild.id ? 'bg-ssc text-white' : ''" class="list-group-item py-3 cursor-pointer">
+                          <i class="bi bi-check2-square me-2"></i>{{ itemChild.title }}
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="col-12">
+                      <div v-for="itemChild in item.service" :key="item" >
+                        <Transition name="slide-fade">
+                          <div v-show="serviceId == itemChild.id" class="card">
+                            <div class="card-header bg-transparent fw-semibold h5 py-3">
+                              {{ itemChild.title }}
+                            </div>
+                            <div class="card-body">
+                              <div class="text-center">
+                                <img :src="itemChild.imgUrl" alt="" class="img-fluid img-layanan">
+                              </div>
+                              <p class="card-text">{{ itemChild.description }}</p>
+                            </div>
+                          </div>
+                        </Transition>
+                      </div> 
+                    </div>
+                  </div>
+                  <div class="my-1"> 
+                    <div class="row">
+                      <div class="col-12">
+                        <div class="mb-5">
+                          <h2 class="text-ssc">{{  item.informationTitle }}</h2>
+                          <div class="badge-ssc-layanan"></div>
+                        </div>
+                        <p class="mb-4">{{  item.informationDescription }}</p>
+                        <div>
+                          <a :href="item.igUrl" target="_blank" class="text-ssc-hover mb-3 d-block h5 accordion text-decoration-none"> 
+                            <i class="bi bi-instagram me-3"></i> {{ item.igUsername }} 
+                          </a>
+                          <a :href="item.webUrl" target="_blank" class="text-ssc-hover d-block h5 accordion text-decoration-none"> 
+                            <i class="bi bi-globe me-3"></i> {{ item.webUrl }} 
+                          </a>
+                        </div>
+                      </div>
+                      <div class="col-12">
+                        <img :src="item.informationImg" alt="" class="img-fluid">
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </Transition>
             </div>
