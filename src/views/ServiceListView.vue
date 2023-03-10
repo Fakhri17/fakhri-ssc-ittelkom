@@ -5,7 +5,7 @@
       <div class="my-5">
         <div class="row">
           <div v-for="index in 12" :key="index" class="col-lg-3 col-6 mb-3">
-            <router-link @mouseover="cardHover = index" @mouseleave="cardHover = 0" to="/services" class="text-decoration-none">
+            <router-link @mouseover="cardHover = index" @mouseleave="cardHover = 0" :to="`/service/${index}`" class="text-decoration-none">
               <div :class="cardHover == index ? 'shadow' : '' " class="card">
                 <div class="card-body">
                   <img src="https://ssc.ittelkom-sby.ac.id/assets-home/imgs/icon/fakultas-ti-bisnis.svg" alt="" class="img-fluid">
@@ -32,7 +32,7 @@
 </template>
 
 <script>
-   import { GET_USERNAME } from "../stores/storeconstants";
+  import { GET_USERNAME } from "../stores/storeconstants";
 
   export default {
     data(){
@@ -40,14 +40,11 @@
         cardHover: 0
       }
     },
-    // mounted() {
-    //   if(this.$store.getters[`auth/${GET_USERNAME}`].length){
-    //     this.$router.push("/service-list");
-    //   }
-    //   else {
-    //     this.$router.push("/");
-    //   }
+    mounted() {
+      if(!this.$store.getters[`auth/${GET_USERNAME}`].length){
+        this.$router.push("/");
+      }
       
-    // },
+    },
   }
 </script> 

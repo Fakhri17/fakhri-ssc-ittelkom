@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+  history: createWebHistory(''),
   routes: [
     {
       path: '/',
@@ -26,6 +26,11 @@ const router = createRouter({
       path: '/service-list',
       name: 'service-list',
       component: () => import('../views/ServiceListView.vue')
+    },
+    {
+      path: '/service/:id',
+      name: 'service',
+      component: () => import('../views/ServiceDetailView.vue')
     }
   ]
 })

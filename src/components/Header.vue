@@ -48,8 +48,8 @@
           </ul>
           <div class="d-block my-3 my-lg-0">
             <router-link v-if="getUsername().length" class="btn btn-ssc px-4 py-2 d-block mb-3" to="/service-list">Layanan</router-link>
-            <router-link v-if="!getUsername().length" class="btn btn-ssc px-4 py-2 d-block mb-3" to="/login">Login</router-link>
-            <router-link v-else class="btn btn-ssc px-4 py-2 d-block mb-3" to="/" @click="resetState()">Logout</router-link>
+            <router-link v-if="!getUsername().length" class="btn btn-ssc px-4 py-2 mb-3" to="/login">Login</router-link>
+            <router-link v-else class="btn btn-ssc px-4 py-2 mb-3" to="/" @click="resetState()">Logout</router-link>
           </div>
         </div>
       </div>
@@ -69,7 +69,8 @@
       resetState() {
         this.$store.commit(`auth/${SET_AUTHENTICATION}`, false);
         this.$store.commit(`auth/${SET_USERNAME}`, "");
-        window.location.reload();
+        this.$router.push("/");
+        // window.location.reload();
       } 
     },
    }
