@@ -98,6 +98,7 @@
 
 .fade-enter-active,
 .fade-leave-active {
+  display: none;
   transition: opacity 0.3s ease;
 }
 
@@ -107,11 +108,12 @@
 }
 
 .slide-fade-enter-active {
-  transition: all 0.3s ease-out;
+  transition: all 0.3s ease-in;
 }
 
 .slide-fade-leave-active {
-  transition: all 0s cubic-bezier(1, 0.5, 0.8, 1);
+  display: none;
+  transition: all 1s ease-out;
 }
 
 .slide-fade-enter-from,

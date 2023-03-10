@@ -79,7 +79,7 @@
             </div>
 
             <div class="d-lg-none d-block">
-              <Transition name="fade">
+              <Transition appear name="slide-fade">
                 <div v-show="displayLayanan == item.id" v-cloak class="my-5">
                   <div v-if="item.service.length" class="mb-4">
                     <h2 class="text-ssc">Layanan {{ item.title }}</h2>
@@ -96,7 +96,7 @@
                     </div>
                     <div class="col-12">
                       <div v-for="itemChild in item.service" :key="item" >
-                        <Transition name="slide-fade">
+                        <Transition appear name="slide-fade">
                           <div v-show="serviceId == itemChild.id" v-cloak class="card">
                             <div class="card-header bg-transparent fw-semibold h5 py-3">
                               {{ itemChild.title }}
@@ -143,7 +143,7 @@
         
           <div class="d-none d-lg-block">
             <div v-for="item in layanan" :key="item">
-              <Transition name="fade">
+              <Transition appear name="slide-fade">
                 <div v-show="displayLayanan == item.id" v-cloak class="my-5">
                   <div v-if="item.service.length" class="mb-5">
                     <h2 class="text-ssc">Layanan {{ item.title }}</h2>
@@ -160,7 +160,7 @@
                   </div>
                   <div class="col-8">
                     <div v-for="itemChild in item.service" :key="item" >
-                      <Transition name="slide-fade">
+                      <Transition appear name="slide-fade">
                         <div v-show="serviceId == itemChild.id" v-cloak class="card">
                           <div class="card-header bg-transparent fw-semibold h5 py-3">
                             {{ itemChild.title }}
