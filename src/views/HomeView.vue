@@ -37,9 +37,9 @@
                     <li
                       v-for="item in timeLine"
                       :key="item"
-                      class="list-inline-item items-list mx-1"
+                      class="list-inline-item items-list mx-lg-1 mx-0 my-4 my-lg-0"
                     >
-                      <div class="d-flex d-md-block px-2">
+                      <div class="px-2">
                         <span class="bg-ssc badge-timeline py-1 text-white fw-semibold mb-2">{{
                           item.number
                         }}</span>
@@ -80,7 +80,7 @@
 
             <div class="d-lg-none d-block">
               <Transition name="fade">
-                <div v-show="displayLayanan == item.id" class="my-5">
+                <div v-show="displayLayanan == item.id" v-cloak class="my-5">
                   <div v-if="item.service.length" class="mb-4">
                     <h2 class="text-ssc">Layanan {{ item.title }}</h2>
                     <div class="badge-ssc-layanan"></div>
@@ -97,7 +97,7 @@
                     <div class="col-12">
                       <div v-for="itemChild in item.service" :key="item" >
                         <Transition name="slide-fade">
-                          <div v-show="serviceId == itemChild.id" class="card">
+                          <div v-show="serviceId == itemChild.id" v-cloak class="card">
                             <div class="card-header bg-transparent fw-semibold h5 py-3">
                               {{ itemChild.title }}
                             </div>
@@ -144,7 +144,7 @@
           <div class="d-none d-lg-block">
             <div v-for="item in layanan" :key="item">
               <Transition name="fade">
-                <div v-show="displayLayanan == item.id" class="my-5">
+                <div v-show="displayLayanan == item.id" v-cloak class="my-5">
                   <div v-if="item.service.length" class="mb-5">
                     <h2 class="text-ssc">Layanan {{ item.title }}</h2>
                     <div class="badge-ssc-layanan"></div>
@@ -161,7 +161,7 @@
                   <div class="col-8">
                     <div v-for="itemChild in item.service" :key="item" >
                       <Transition name="slide-fade">
-                        <div v-show="serviceId == itemChild.id" class="card">
+                        <div v-show="serviceId == itemChild.id" v-cloak class="card">
                           <div class="card-header bg-transparent fw-semibold h5 py-3">
                             {{ itemChild.title }}
                           </div>

@@ -2,6 +2,9 @@
   --color-ssc: #AA0000;
 }
 
+[v-cloak] {
+  display: none;
+}
 
 .logo-header{
   width: 160px;
