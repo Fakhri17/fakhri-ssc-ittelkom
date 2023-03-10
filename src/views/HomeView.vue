@@ -4,7 +4,6 @@
   <main>
     <section class="my-5">
       <div class="container">
-        <h3 v-if="getUsername().length"> Welcome {{ getUsername() }}</h3>
         <div class="row align-items-center">
           <div class="col-md-5 col-12 mb-4 mb-lg-0">
             <div class="text-center text-lg-start ms-0 ms-lg-5">

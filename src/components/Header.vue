@@ -1,10 +1,11 @@
 <template>
   <nav class="navbar navbar-expand-lg shadow">
     <div class="container">
-      <a class="navbar-brand me-auto" href="#">
+      <router-link to="/" class="navbar-brand me-auto">
         <img src="@/assets/logo-basic-ssc.png" alt="SSC IMG" class="logo-header img-fluid">
-      </a>
+      </router-link>
       <div class="d-flex my-3 my-lg-0 d-lg-block d-none">
+        <router-link v-if="getUsername().length" class="btn btn-ssc me-3 px-4 py-2" to="/service-list">Layanan</router-link>
         <router-link v-if="!getUsername().length" class="btn btn-ssc px-4 py-2" to="/login">Login</router-link>
         <router-link v-else class="btn btn-ssc px-4 py-2" to="/" @click="resetState()">Logout</router-link>
       </div>
@@ -45,9 +46,10 @@
               </ul>
             </li> -->
           </ul>
-          <div class="d-flex my-3 my-lg-0">
-            <router-link v-if="!getUsername().length" class="btn btn-ssc px-4 py-2" to="/login">Login</router-link>
-            <router-link v-else class="btn btn-ssc px-4 py-2" to="/" @click="resetState()">Logout</router-link>
+          <div class="d-block my-3 my-lg-0">
+            <router-link v-if="getUsername().length" class="btn btn-ssc px-4 py-2 d-block mb-3" to="/service-list">Layanan</router-link>
+            <router-link v-if="!getUsername().length" class="btn btn-ssc px-4 py-2 d-block mb-3" to="/login">Login</router-link>
+            <router-link v-else class="btn btn-ssc px-4 py-2 d-block mb-3" to="/" @click="resetState()">Logout</router-link>
           </div>
         </div>
       </div>
