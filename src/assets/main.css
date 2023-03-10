@@ -102,3 +102,41 @@
 .fade-leave-to {
   opacity: 0;
 }
+
+.slide-fade-enter-active {
+  transition: all 0.3s ease-out;
+}
+
+.slide-fade-leave-active {
+  transition: all 0s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.slide-fade-enter-from,
+.slide-fade-leave-to {
+  transform: translateX(20px);
+  opacity: 0;
+}
+
+.img-layanan {
+  max-height: 15rem;
+}
+
+.mb-layanan{
+  margin-bottom: 9rem;
+}
+
+.text-ssc{
+  color: var(--color-ssc);
+}
+
+.text-ssc:hover{
+  color: #eb4545;
+}
+
+.active-layanan{
+  background: rgba(170, 0, 0, 0.7);
+}
+
+.bg-ssc{
+  background: var(--color-ssc);
+}
