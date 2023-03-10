@@ -59,17 +59,17 @@
     <section class="my-5">
       <div class="container">
         <h3 class="mb-5">
-          <span class="text-ssc"><i class="bi bi-book-half me-2"></i>Kategori</span> Layanan
+          <span class="text-ssc"><i class="bi bi-collection me-2"></i>Kategori</span> Layanan
         </h3>
         <div class="row">
           <div v-for="item in layanan" :key="item" class="col-lg-3 col-12">
-            <div @click="displayListLayanan(item.id)" :class="displayLayanan === item.id ? 'active-layanan' : ''" class="card mb-3 cursor-pointer">
+            <div @click="displayListLayanan(item.id)" :class="displayLayanan === item.id ? 'active-layanan text-white' : ''" class="card mb-3 cursor-pointer">
               <div class="card-body">
                 <div class="text-center mb-3">
                   <lord-icon
                     :src="`https://cdn.lordicon.com/${item.icon}.json`"
                     trigger="morph"
-                    :colors="`primary:${item.colorPrimary},secondary:${item.colorSecondary}`"
+                    :colors="`primary:${displayLayanan === item.id ? '#ffffff' : item.colorPrimary},secondary:${displayLayanan === item.id ? '#ffffff' : item.colorSecondary}`"
                     style="width: 100px; height: 100px"
                   >
                   </lord-icon>

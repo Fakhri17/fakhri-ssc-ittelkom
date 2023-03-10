@@ -142,7 +142,7 @@
 }
 
 .active-layanan{
-  background: rgba(170, 0, 0, 0.7);
+  background: var(--color-ssc);
 }
 
 .bg-ssc{
