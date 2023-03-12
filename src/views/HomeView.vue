@@ -63,7 +63,8 @@
         </h3>
         <div class="row">
           <div v-for="item in layanan" :key="item" class="col-lg-3 col-12">
-            <div @click="displayListLayanan(item.id)" :class="displayLayanan === item.id ? 'active-layanan text-white' : ''" class="card mb-3 cursor-pointer">
+            <a href="javascript:void(0)" @click="displayListLayanan(item.id)" 
+              :class="displayLayanan === item.id ? 'active-layanan text-white text-decoration-none' : 'text-decoration-none text-dark'" class="card mb-3 cursor-pointer">
               <div class="card-body">
                 <div class="text-center mb-3">
                   <lord-icon
@@ -76,7 +77,7 @@
                 </div>
                 <h6 class="fw-semibold text-center">{{ item.title }}</h6>
               </div>
-            </div>
+            </a>
 
             <div class="d-lg-none d-block">
               <Transition appear name="slide-fade">
