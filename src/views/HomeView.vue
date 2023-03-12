@@ -22,7 +22,7 @@
         </div>
       </div>
     </section>
-    <section class="my-5">
+    <section class="mt-5 mb-2">
       <div class="container">
         <div class="py-5">
           <h3 class="mb-5">
@@ -56,7 +56,7 @@
         </div>
       </div>
     </section>
-    <section id="layanan" class="my-5">
+    <section id="layanan" class="mt-2 mb-5">
       <div class="container">
         <h3 class="mb-5">
           <span class="text-ssc"><i class="bi bi-collection me-2"></i>Kategori</span> Layanan
