@@ -157,8 +157,13 @@
 }
 
 .btn-ssc:hover{
-  background: #cf0404;
+  background-color: #e60303 !important;
   color: #fff;
+}
+
+.btn-ssc, .active{
+  background-color: #cf0404 !important;
+  color: #fff !important;
 }
 
 #btn-back-to-top {
@@ -166,4 +171,16 @@
   bottom: 20px;
   right: 20px;
   display: none;
+}
+
+
+
+.form-check-ssc:checked {
+  background-color: var(--color-ssc);
+  border-color: var(--color-ssc);
+}
+
+.dropdown-ssc:active{
+  background-color: var(--color-ssc) !important;
+  color: #fff !important;
 }

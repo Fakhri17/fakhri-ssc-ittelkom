@@ -20,6 +20,10 @@
             <div class="mb-3">
               <input type="password" class="form-control" placeholder="Password" v-model="input.password">
             </div>
+            <div class="mb-3 form-check">
+              <input type="checkbox" class="form-check-input form-check-ssc cursor-pointer" id="exampleCheck1">
+              <label class="form-check-label" for="exampleCheck1">Remember Me</label>
+            </div>
             <button type="submit" class="btn btn-ssc px-4 py-2 w-100" v-on:click.prevent = "login()">Login</button>
           </form>
           <div class="text-center mb-4">

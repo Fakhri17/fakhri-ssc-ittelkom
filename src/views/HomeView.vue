@@ -16,7 +16,7 @@
           </div>
           <div class="col-md-7 col-12">
             <div>
-              <img v-lazy="headerImg('home-img-ssc.png')" alt="" class="img-fluid" />
+              <img v-lazy="{ src: headerImg('home-img-ssc.png'), loading: 'your loading image url', error: 'your error image url', delay: 100 }" alt="" class="img-fluid" />
             </div>
           </div>
         </div>
@@ -56,7 +56,7 @@
         </div>
       </div>
     </section>
-    <section class="my-5">
+    <section id="layanan" class="my-5">
       <div class="container">
         <h3 class="mb-5">
           <span class="text-ssc"><i class="bi bi-collection me-2"></i>Kategori</span> Layanan
@@ -104,7 +104,7 @@
                             </div>
                             <div class="card-body">
                               <div class="text-center">
-                                <img v-lazy="itemChild.imgUrl" alt="" class="img-fluid img-layanan">
+                                <img v-lazy="{ src: itemChild.imgUrl, loading: 'your loading image url', error: 'your error image url', delay: 100 }" alt="" class="img-fluid img-layanan">
                               </div>
                               <p class="card-text">{{ itemChild.description }}</p>
                             </div>
@@ -131,7 +131,7 @@
                         </div>
                       </div>
                       <div class="col-12">
-                        <img v-lazy="item.informationImg" alt="" class="img-fluid">
+                        <img v-lazy="{ src: item.informationImg, loading: 'your loading image url', error: 'your error image url', delay: 100 }"  alt="" class="img-fluid">
                       </div>
                     </div>
                   </div>
@@ -168,7 +168,7 @@
                           </div>
                           <div class="card-body">
                             <div class="text-center">
-                              <img v-lazy="itemChild.imgUrl" alt="" class="img-fluid img-layanan">
+                              <img v-lazy="{ src: itemChild.imgUrl, loading: 'your loading image url', error: 'your error image url', delay: 100 }" alt="" class="img-fluid img-layanan">
                             </div>
                             <p class="card-text">{{ itemChild.description }}</p>
                           </div>
@@ -196,7 +196,7 @@
                       </div>
                     </div>
                     <div class="col-6">
-                      <img v-lazy="item.informationImg" alt="" class="img-fluid">
+                      <img v-lazy="{ src: item.informationImg, loading: 'your loading image url', error: 'your error image url', delay: 100 }"  alt="" class="img-fluid">
                     </div>
                   </div>
                   
