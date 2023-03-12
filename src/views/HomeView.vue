@@ -63,7 +63,7 @@
         </h3>
         <div class="row">
           <div v-for="item in layanan" :key="item" class="col-lg-3 col-12">
-            <a href="javascript:void(0)" @click="displayListLayanan(item.id)" 
+            <a :href="`#${item.id}`" @click="displayListLayanan(item.id)" 
               :class="displayLayanan === item.id ? 'active-layanan text-white text-decoration-none' : 'text-decoration-none text-dark'" class="card mb-3 cursor-pointer">
               <div class="card-body">
                 <div class="text-center mb-3">
@@ -79,7 +79,7 @@
               </div>
             </a>
 
-            <div class="d-lg-none d-block">
+            <div :id="item.id" class="d-lg-none d-block">
               <Transition appear name="slide-fade">
                 <div v-show="displayLayanan == item.id" v-cloak class="my-5">
                   <div v-if="item.service.length" class="mb-4">
