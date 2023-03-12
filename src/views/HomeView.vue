@@ -16,7 +16,7 @@
           </div>
           <div class="col-md-7 col-12">
             <div>
-              <img src="@/assets/home-img-ssc.png" alt="" class="img-fluid" />
+              <img v-lazy="headerImg('home-img-ssc.png')" alt="" class="img-fluid" />
             </div>
           </div>
         </div>
@@ -103,7 +103,7 @@
                             </div>
                             <div class="card-body">
                               <div class="text-center">
-                                <img :src="itemChild.imgUrl" alt="" class="img-fluid img-layanan">
+                                <img v-lazy="itemChild.imgUrl" alt="" class="img-fluid img-layanan">
                               </div>
                               <p class="card-text">{{ itemChild.description }}</p>
                             </div>
@@ -130,7 +130,7 @@
                         </div>
                       </div>
                       <div class="col-12">
-                        <img :src="item.informationImg" alt="" class="img-fluid">
+                        <img v-lazy="item.informationImg" alt="" class="img-fluid">
                       </div>
                     </div>
                   </div>
@@ -167,7 +167,7 @@
                           </div>
                           <div class="card-body">
                             <div class="text-center">
-                              <img :src="itemChild.imgUrl" alt="" class="img-fluid img-layanan">
+                              <img v-lazy="itemChild.imgUrl" alt="" class="img-fluid img-layanan">
                             </div>
                             <p class="card-text">{{ itemChild.description }}</p>
                           </div>
@@ -195,7 +195,7 @@
                       </div>
                     </div>
                     <div class="col-6">
-                      <img :src="item.informationImg" alt="" class="img-fluid">
+                      <img v-lazy="item.informationImg" alt="" class="img-fluid">
                     </div>
                   </div>
                   
@@ -234,7 +234,10 @@
       },
       getUsername() {
         return this.$store.getters[`auth/${GET_USERNAME}`]
-      }, 
+      },
+      headerImg(img){
+        return new URL(`/src/assets/${img}`, import.meta.url).href;
+      } 
     },
     setup() {
       const timeLine = [

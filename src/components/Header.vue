@@ -2,7 +2,7 @@
   <nav class="navbar navbar-expand-lg shadow">
     <div class="container">
       <router-link to="/" class="navbar-brand me-auto">
-        <img src="@/assets/logo-basic-ssc.png" alt="SSC IMG" class="logo-header img-fluid">
+        <img v-lazy="headerImg()" alt="SSC IMG" class="logo-header img-fluid">
       </router-link>
       <div class="d-flex my-3 my-lg-0 d-lg-block d-none">
         <router-link v-if="getUsername().length" class="btn btn-ssc me-3 px-4 py-2" to="/service-list">Layanan</router-link>
@@ -63,6 +63,9 @@
   import {  GET_USERNAME, SET_AUTHENTICATION, SET_USERNAME } from "../stores/storeconstants";
    export default {
     methods: {
+      headerImg() {
+        return new URL('/src/assets/logo-basic-ssc.png', import.meta.url).href;
+      },
       getUsername() {
         return this.$store.getters[`auth/${GET_USERNAME}`]
       },
