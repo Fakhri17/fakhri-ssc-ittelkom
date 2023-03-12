@@ -16,9 +16,7 @@
   font-size: 3rem;
 }
 
-.horizontal-timeline .items {
-  border-top: 3px solid var(--color-ssc);
-}
+
 
 .horizontal-timeline .items .items-list {
   display: block;
@@ -49,6 +47,9 @@
 }
 
 @media (min-width: 1140px) {
+  .horizontal-timeline .items {
+    border-top: 3px solid var(--color-ssc);
+  }
   .horizontal-timeline .items .items-list {
     display: inline-flex;
     width: 13.5%;
@@ -60,10 +61,22 @@
   }
 }
 
+.w-text-banner-list{
+  width: 35%;
+}
 
+.w-select-detail{
+  width: 25%;
+}
 @media (max-width:641px)  { 
   .horizontal-timeline .items {
     border-top: 0px;
+  }
+  .w-text-banner-list{
+    width: 100%;
+  }
+  .w-select-detail{
+    width: 100%;
   }
 }
 

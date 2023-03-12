@@ -27,7 +27,7 @@
         </div>
       </div>
       <div class="py-3 px-3" style="background: url('https://ssc.ittelkom-sby.ac.id/assets-home/imgs/banner/banner-4.png');  background-size: cover;">
-        <div class="mt-5" style="width: 35%;">
+        <div class="mt-5 w-text-banner-list">
           <h4 class="text-ssc">Student Service Center</h4>
           <h2 class="fs-1 mb-3">Selesaikan problem Semudah itu</h2>
           <a href="#" class="btn btn-ssc px-4 py-2 mb-3">Ajukan Tiket</a>

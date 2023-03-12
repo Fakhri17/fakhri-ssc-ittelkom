@@ -6,7 +6,7 @@
     "
   >
     <div class="d-flex flex-column min-vh-100 justify-content-center align-items-center">
-      <div class="alert alert-danger" role="alert">
+      <div class="alert alert-danger" role="alert" style="width: 350px;">
         Karena Ini masih proses isi data dengan bebas untuk validasi
       </div>
       <div class="card shadow px-1" style="width: 350px;">

@@ -15,7 +15,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
               </div>
               <form action="">
-                <select class="form-select w-25" aria-label="Default select example">
+                <select class="form-select w-select-detail cursor-pointer" aria-label="Default select example">
                   <option selected>Pilih Jenis Tiket</option>
                   <option value="1">Permintaan</option>
                   <option value="2">Tiket Insiden</option>
