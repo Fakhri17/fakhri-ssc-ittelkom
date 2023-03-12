@@ -6,6 +6,9 @@
     "
   >
     <div class="d-flex flex-column min-vh-100 justify-content-center align-items-center">
+      <div class="alert alert-danger" role="alert">
+        Karena Ini masih proses isi data dengan bebas untuk validasi
+      </div>
       <div class="card shadow px-1" style="width: 350px;">
         <div class="card-body">
           <h4>Student Service Center</h4>
@@ -20,6 +23,9 @@
             <button type="submit" class="btn btn-ssc px-4 py-2 w-100" v-on:click.prevent = "login()">Login</button>
           </form>
           <div class="text-center mb-4">
+            <h5 class="text-danger">{{ output }}</h5>
+          </div>
+          <div class="text-center mb-4">
             <router-link class="text-ssc text-center" to="/">Back To Home</router-link>
             
           </div>
@@ -31,8 +37,7 @@
 </template>
 
 <script>
-import { SET_AUTHENTICATION, SET_USERNAME, GET_USERNAME } from "../stores/storeconstants";
-import { useStore } from 'vuex'
+import { SET_AUTHENTICATION, SET_USERNAME} from "../stores/storeconstants";
   export default {
     data(){
       return{
@@ -40,24 +45,18 @@ import { useStore } from 'vuex'
           username: "",
           password: ""
         },
-      }
-    },
-    setup(){
-      const store = useStore()
-      const coba = store.getters[`auth/${GET_USERNAME}`]
-      return{
-        coba
+        output: ""
       }
     },
     methods:{
       login(){
         //make sure username OR password are not empty
         if(this.input.username != "" && this.input.password != ""){
-          this.output = "Authentication complete"
-          //stores true to the set_authentication and username to the set_username 
+          //stores true to the set_authentication and username to the set_username
+          sessionStorage.setItem("username", this.input.username); 
           this.$store.commit(`auth/${SET_AUTHENTICATION}`, true);
           this.$store.commit(`auth/${SET_USERNAME}`, this.input.username);
-          this.output = "Authentication complete."
+          // this.output = "Authentication complete."
           this.$router.push("/service-list");
         }else{
           this.$store.commit(`auth/${SET_AUTHENTICATION}`, false);

@@ -56,11 +56,11 @@
 </template>
 
 <script>
-  import { GET_USERNAME } from "../stores/storeconstants";
+  // import { GET_USERNAME } from "../stores/storeconstants";
   export default{
     mounted(){
-      if(!this.$store.getters[`auth/${GET_USERNAME}`].length){
-        this.$router.push("/");
+      if(sessionStorage.getItem("username") == null){
+        this.$router.push("/login");
       }
     ClassicEditor
       .create( document.querySelector( '#editor' ) )

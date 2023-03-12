@@ -5,9 +5,9 @@
         <img v-lazy="headerImg()" alt="SSC IMG" class="logo-header img-fluid">
       </router-link>
       <div class="d-flex my-3 my-lg-0 d-lg-block d-none">
-        <router-link v-if="getUsername().length" class="btn btn-ssc me-3 px-4 py-2" to="/service-list">Layanan</router-link>
-        <router-link v-if="!getUsername().length" class="btn btn-ssc px-4 py-2" to="/login">Login</router-link>
-        <router-link v-else class="btn btn-ssc px-4 py-2" to="/" @click="resetState()">Logout</router-link>
+        <router-link v-if="getUsername().length" class="btn btn-ssc btn-sm me-3 px-3 py-2" to="/service-list">Layanan</router-link>
+        <router-link v-if="!getUsername().length" class="btn btn-ssc btn-sm px-3 py-2" to="/login">Login</router-link>
+        <router-link v-else class="btn btn-ssc btn-sm px-3 py-2" to="/" @click="resetState()">Logout</router-link>
       </div>
       <button
         class="navbar-toggler"
@@ -47,9 +47,9 @@
             </li> -->
           </ul>
           <div class="d-block my-3 my-lg-0">
-            <router-link v-if="getUsername().length" class="btn btn-ssc px-4 py-2 d-block mb-3" to="/service-list">Layanan</router-link>
-            <router-link v-if="!getUsername().length" class="btn btn-ssc px-4 py-2 mb-3" to="/login">Login</router-link>
-            <router-link v-else class="btn btn-ssc px-4 py-2 mb-3" to="/" @click="resetState()">Logout</router-link>
+            <router-link v-if="getUsername().length" class="btn btn-ssc btn-sm px-3 py-2 d-block mb-3" to="/service-list">Layanan</router-link>
+            <router-link v-if="!getUsername().length" class="btn btn-ssc btn-sm px-3 d-block py-2 mb-3" to="/login">Login</router-link>
+            <router-link v-else class="btn btn-ssc btn-sm d-block px-3 py-2 mb-3" to="/" @click="resetState()">Logout</router-link>
           </div>
         </div>
       </div>
@@ -67,12 +67,13 @@
         return new URL('/src/assets/logo-basic-ssc.png', import.meta.url).href;
       },
       getUsername() {
-        return this.$store.getters[`auth/${GET_USERNAME}`]
+        return sessionStorage.getItem("username") === null ? this.$store.getters[`auth/${GET_USERNAME}`] : sessionStorage.getItem("username");
       },
       resetState() {
         this.$store.commit(`auth/${SET_AUTHENTICATION}`, false);
         this.$store.commit(`auth/${SET_USERNAME}`, "");
-        this.$router.push("/");
+        sessionStorage.removeItem("username");
+        this.$router.push("/login");
         // window.location.reload();
       } 
     },
