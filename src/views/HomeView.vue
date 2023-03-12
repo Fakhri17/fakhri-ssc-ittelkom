@@ -61,8 +61,8 @@
         <h3 class="mb-5">
           <span class="text-ssc"><i class="bi bi-collection me-2"></i>Kategori</span> Layanan
         </h3>
-        <div class="row">
-          <div v-for="item in layanan" :key="item" class="col-lg-3 col-12">
+        <div class="row d-none d-md-flex">
+          <div v-for="item in layanan" :key="item" class="col-lg-3 col-md-6 col-12">
             <a :href="`#${item.id}`" @click="displayListLayanan(item.id)" 
               :class="displayLayanan === item.id ? 'active-layanan text-white text-decoration-none' : 'text-decoration-none text-dark'" class="card mb-3 cursor-pointer">
               <div class="card-body">
@@ -77,136 +77,99 @@
                 </div>
                 <h6 class="fw-semibold text-center">{{ item.title }}</h6>
               </div>
-            </a>
-
-            <div :id="item.id" class="d-lg-none d-block">
-              <Transition appear name="slide-fade">
-                <div v-show="displayLayanan == item.id" v-cloak class="my-5">
-                  <div v-if="item.service.length" class="mb-4">
-                    <h2 class="text-ssc">Layanan {{ item.title }}</h2>
-                    <div class="badge-ssc-layanan"></div>
-                  </div>
-                  <div v-if="item.service.length" class="row mb-5">
-                    <div class="col-12 mb-4">
-                      <ul class="list-group">
-                        <li v-for="itemChild in item.service" :key="item" @click="displayDetailLayanan(itemChild.id)"  
-                          :class="serviceId == itemChild.id ? 'bg-ssc text-white' : ''" class="list-group-item py-3 cursor-pointer">
-                          <i class="bi bi-check2-square me-2"></i>{{ itemChild.title }}
-                        </li>
-                      </ul>
-                    </div>
-                    <div class="col-12">
-                      <div v-for="itemChild in item.service" :key="item" >
-                        <Transition appear name="slide-fade">
-                          <div v-show="serviceId == itemChild.id" v-cloak class="card">
-                            <div class="card-header bg-transparent fw-semibold h5 py-3">
-                              {{ itemChild.title }}
-                            </div>
-                            <div class="card-body">
-                              <div class="text-center">
-                                <img v-lazy="{ src: itemChild.imgUrl, loading: 'your loading image url', error: 'your error image url', delay: 100 }" alt="" class="img-fluid img-layanan">
-                              </div>
-                              <p class="card-text">{{ itemChild.description }}</p>
-                            </div>
-                          </div>
-                        </Transition>
-                      </div> 
-                    </div>
-                  </div>
-                  <div class="my-1"> 
-                    <div class="row">
-                      <div class="col-12">
-                        <div class="mb-5">
-                          <h2 class="text-ssc">{{  item.informationTitle }}</h2>
-                          <div class="badge-ssc-layanan"></div>
-                        </div>
-                        <p class="mb-4">{{  item.informationDescription }}</p>
-                        <div>
-                          <a :href="item.igUrl" target="_blank" class="text-ssc-hover mb-3 d-block h5 accordion text-decoration-none"> 
-                            <i class="bi bi-instagram me-3"></i> {{ item.igUsername }} 
-                          </a>
-                          <a :href="item.webUrl" target="_blank" class="text-ssc-hover d-block h5 accordion text-decoration-none"> 
-                            <i class="bi bi-globe me-3"></i> {{ item.webUrl }} 
-                          </a>
-                        </div>
-                      </div>
-                      <div class="col-12">
-                        <img v-lazy="{ src: item.informationImg, loading: 'your loading image url', error: 'your error image url', delay: 100 }"  alt="" class="img-fluid">
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </Transition>
-            </div>
-           
+            </a>  
           </div>
         </div>
-        
-          <div class="d-none d-lg-block">
-            <div v-for="item in layanan" :key="item">
-              <Transition appear name="slide-fade">
-                <div v-show="displayLayanan == item.id" v-cloak class="my-5">
-                  <div v-if="item.service.length" class="mb-5">
-                    <h2 class="text-ssc">Layanan {{ item.title }}</h2>
-                    <div class="badge-ssc-layanan"></div>
-                  </div>
-                 <div v-if="item.service.length" class="row mb-layanan">
-                  <div class="col-4">
-                    <ul class="list-group">
-                      <li v-for="itemChild in item.service" :key="item" @click="displayDetailLayanan(itemChild.id)"  
-                        :class="serviceId == itemChild.id ? 'bg-ssc text-white' : ''" class="list-group-item py-3 cursor-pointer">
-                        <i class="bi bi-check2-square me-2"></i>{{ itemChild.title }}
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="col-8">
-                    <div v-for="itemChild in item.service" :key="item" >
-                      <Transition appear name="slide-fade">
-                        <div v-show="serviceId == itemChild.id" v-cloak class="card">
-                          <div class="card-header bg-transparent fw-semibold h5 py-3">
-                            {{ itemChild.title }}
-                          </div>
-                          <div class="card-body">
-                            <div class="text-center">
-                              <img v-lazy="{ src: itemChild.imgUrl, loading: 'your loading image url', error: 'your error image url', delay: 100 }" alt="" class="img-fluid img-layanan">
-                            </div>
-                            <p class="card-text">{{ itemChild.description }}</p>
-                          </div>
-                        </div>
-                      </Transition>
-                    </div> 
-                  </div>
-                 </div>
-                 <div class="my-5">
-                 
-                  <div class="row">
-                    <div class="col-6">
-                      <div class="mb-5">
-                        <h2 class="text-ssc">{{  item.informationTitle }}</h2>
-                        <div class="badge-ssc-layanan"></div>
-                      </div>
-                      <p class="mb-4">{{  item.informationDescription }}</p>
-                      <div>
-                        <a :href="item.igUrl" target="_blank" class="text-ssc-hover mb-3 d-block h5 accordion text-decoration-none"> 
-                          <i class="bi bi-instagram me-3"></i> {{ item.igUsername }} 
-                        </a>
-                        <a :href="item.webUrl" target="_blank" class="text-ssc-hover d-block h5 accordion text-decoration-none"> 
-                          <i class="bi bi-globe me-3"></i> {{ item.webUrl }} 
-                        </a>
-                      </div>
-                    </div>
-                    <div class="col-6">
-                      <img v-lazy="{ src: item.informationImg, loading: 'your loading image url', error: 'your error image url', delay: 100 }"  alt="" class="img-fluid">
-                    </div>
-                  </div>
-                  
-                 
-                 </div>
+        <Carousel class="d-md-none">
+          <Slide v-for="item in layanan" :key="item">
+            <a :href="`#${item.id}`" @click="displayListLayanan(item.id)" 
+              :class="displayLayanan === item.id ? 'active-layanan text-white text-decoration-none' : 'text-decoration-none text-dark'" class="card mb-3 cursor-pointer w-100">
+              <div class="card-body">
+                <div class="text-center mb-3">
+                  <lord-icon
+                    :src="`https://cdn.lordicon.com/${item.icon}.json`"
+                    trigger="morph"
+                    :colors="`primary:${displayLayanan === item.id ? '#ffffff' : item.colorPrimary},secondary:${displayLayanan === item.id ? '#ffffff' : item.colorSecondary}`"
+                    style="width: 100px; height: 100px"
+                  >
+                  </lord-icon>
                 </div>
-              </Transition>
-              
-            </div>
+                <h6 class="fw-semibold text-center">{{ item.title }}</h6>
+              </div>
+            </a> 
+          </Slide>
+
+          <template #addons>
+            <Navigation />
+            <Pagination />
+          </template>
+        </Carousel>
+        
+        <div class="">
+          <div v-for="item in layanan" :key="item">
+            <Transition appear name="slide-fade">
+              <div v-show="displayLayanan == item.id" v-cloak class="my-5">
+                <div v-if="item.service.length" class="mb-5">
+                  <h2 class="text-ssc">Layanan {{ item.title }}</h2>
+                  <div class="badge-ssc-layanan"></div>
+                </div>
+                <div v-if="item.service.length" class="row mb-layanan">
+                <div class="col-md-4 col-12 mb-lg-0 mb-3">
+                  <ul class="list-group">
+                    <li v-for="itemChild in item.service" :key="item" @click="displayDetailLayanan(itemChild.id)"  
+                      :class="serviceId == itemChild.id ? 'bg-ssc text-white' : ''" class="list-group-item py-3 cursor-pointer">
+                      <i class="bi bi-check2-square me-2"></i>{{ itemChild.title }}
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-md-8 col-12 mb-lg-0 mb-3">
+                  <div v-for="itemChild in item.service" :key="item" >
+                    <Transition appear name="slide-fade">
+                      <div v-show="serviceId == itemChild.id" v-cloak class="card">
+                        <div class="card-header bg-transparent fw-semibold h5 py-3">
+                          {{ itemChild.title }}
+                        </div>
+                        <div class="card-body">
+                          <div class="text-center">
+                            <img v-lazy="{ src: itemChild.imgUrl, loading: 'your loading image url', error: 'your error image url', delay: 100 }" alt="" class="img-fluid img-layanan">
+                          </div>
+                          <p class="card-text">{{ itemChild.description }}</p>
+                        </div>
+                      </div>
+                    </Transition>
+                  </div> 
+                </div>
+                </div>
+                <div class="my-5">
+                
+                <div class="row align-items-center">
+                  <div class="col-md-6 col-12 mb-lg-0 mb-3">
+                    <div class="mb-5">
+                      <h2 class="text-ssc">{{  item.informationTitle }}</h2>
+                      <div class="badge-ssc-layanan"></div>
+                    </div>
+                    <p class="mb-4">{{  item.informationDescription }}</p>
+                    <div>
+                      <a :href="item.igUrl" target="_blank" class="text-ssc-hover mb-3 d-block h5 accordion text-decoration-none"> 
+                        <i class="bi bi-instagram me-3"></i> {{ item.igUsername }} 
+                      </a>
+                      <a :href="item.webUrl" target="_blank" class="text-ssc-hover d-block h5 accordion text-decoration-none"> 
+                        <i class="bi bi-globe me-3"></i> {{ item.webUrl }} 
+                      </a>
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-12 mb-lg-0 mb-3">
+                    <img v-lazy="{ src: item.informationImg, loading: 'your loading image url', error: 'your error image url', delay: 100 }"  alt="" class="img-fluid">
+                  </div>
+                </div>
+                
+                
+                </div>
+              </div>
+            </Transition>
+            
           </div>
+        </div>
         
         
       </div>
@@ -217,8 +180,17 @@
 
 <script>
  import {  GET_USERNAME } from "../stores/storeconstants";
+ import { Carousel, Navigation, Pagination, Slide } from 'vue3-carousel'
+
+ import 'vue3-carousel/dist/carousel.css'
 
   export default {
+    components:{
+      Carousel,
+      Slide,
+      Pagination,
+      Navigation,
+    },
     data() {
       return {
         displayLayanan: 1,
